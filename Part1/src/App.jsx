@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable react/prop-types */
+//Esta parte se podría escribir así
+//const Title = ({course}) =>{ return <h1> {course} </h1> }
+//
+const Title = (props) =>{
 
-function App() {
-  const [count, setCount] = useState(0)
+  return <h1> {props.course} </h1>
+}
+
+const Content = (props) =>{
+  
+  return <p>{props.text} {props.number} </p>
+}
+
+const Operation_lol  = (props) =>{
+
+ 
+  return <p>Number of excercises {props.number} </p>}
+
+
+
+
+const App = () => {
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Title course={course}/>
+      <Content text={part1} number={exercises1}/>
+      <Content text={part2} number={exercises2}/>
+      <Content text={part3} number={exercises3}/>
+      <Operation_lol number={exercises1+exercises2+exercises3}/>  
+    </div>
   )
 }
 
