@@ -1,22 +1,21 @@
-/* eslint-disable react/prop-types */
+
 //Esta parte se podría escribir así
 //const Title = ({course}) =>{ return <h1> {course} </h1> }
 //
 const Title = (props) =>{
-
   return <h1> {props.course} </h1>
 }
+Title.propTypes = '';
 
 const Content = (props) =>{
-  
   return <p>{props.text} {props.number} </p>
 }
+Content.propTypes = '';
 
 const Operation_lol  = (props) =>{
-
- 
-  return <p>Number of excercises {props.number} </p>}
-
+  return <p>Number of excercises {props.number} </p>
+}
+Operation_lol.propTypes = 0 ;
 
 
 
