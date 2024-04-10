@@ -1,33 +1,12 @@
 import { useState } from "react"
 import confetti from 'canvas-confetti'
+import { WinnerModal } from "./WinnerModal"
 
 
 const TURNS = {
   X: '❌',
   O: '⚪'  
 
-}
-
-function WinnerModal ({ winner, resetGame }) {
-  if (winner === null) return null
-
-  const winnerText = winner === false ? 'Empate' : 'Ganó:'
-
-  return (
-    <section className='winner'>
-      <div className='text'>
-        <h2>{winnerText}</h2>
-
-        <header className='win'>
-          {winner && <Square>{winner}</Square>}
-        </header>
-
-        <footer>
-          <button onClick={resetGame}>Empezar de nuevo</button>
-        </footer>
-      </div>
-    </section>
-  )
 }
 
 const saveGameToStorage = ({ board, turn }) => {
@@ -41,7 +20,8 @@ const resetGameStorage = () => {
   window.localStorage.removeItem('turn')
 }
 
-const Square = ({children,isSelected,updateBoard,index}) =>{
+// eslint-disable-next-line react/prop-types
+export const Square = ({children,isSelected,updateBoard,index}) =>{
   const className = `square ${isSelected ? 'is-selected' : ''}`
   const handleClick = () => {
     updateBoard(index)
