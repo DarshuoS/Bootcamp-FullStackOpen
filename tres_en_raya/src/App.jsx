@@ -132,12 +132,15 @@ function App () {
               <Square
                 key={index}
                 index={index}
-                updateBoard={updateBoard}
-              >
+                updateBoard={updateBoard}>
                 {square}
               </Square>
             )
-          })
+          
+          
+         
+            
+})
         }
       </section>
 
